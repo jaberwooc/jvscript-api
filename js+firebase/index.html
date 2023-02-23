@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS + Firebase</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="./main.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+    <script src="api.js"></script>
+</head>
+
+<body onload="read()"> 
+        <nav class="navbar navbar-light  justify-content-between "style="background-color: #29B6AA;">
+            <lu class="navbar-brand">   
+                <a class="navbar-brand" href="index.html">Altas</a>
+                <a class="navbar-brand" href="lista.html">Lista</a>
+            </lu>
+
+         
+
+          </nav>
+
+
+    <div class="container p-3 my-3">
+        <div class="row">
+
+            <div class="col-md-4">
+                <h3 style="text-align:center">Alta de Productos</h3>
+
+                <form action="#">
+                    <div class="form-group ">
+                        <label for="Input1">Codigo</label>
+                        <input type="text " class="form-control " id="Input1" placeholder="Num. de control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Input2">Nombre de Producto</label>
+                        <input type="text" class="form-control" id="Input2" placeholder="Nombre">
+                    </div>
+                    <div class="form-group ">
+                        <label for="Input3">Categoria</label>
+                        <select class="form-control " id="Input3">
+                            <option value="selecciona">selecciona</option>
+                            <option value="Alimentos">Alimentos</option>
+                            <option value="Limpieza">Limpieza</option>
+                            <option value="Dulces">Dulces</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Input4">Descripcion</label>
+                        <input type="text" class="form-control" id="Input4" placeholder="Descripcion">
+                    </div>
+                    <div class="form-group">
+                        <label for="Input5">Imagen</label>
+                        <input type="text" class="form-control" id="Input5" placeholder="Imagen">
+                    </div>
+                    <button type="submit " class="btn btn-primary" onclick="createR()">Enviar</button>
+                    <button type="reset " class="btn btn-secondary" onclick="resetFields()">Limpiar</button>
+                </form>
+
+
+
+            </div>
+            <div class="col-md-8">
+                <h3 style="text-align:center">Productos</h3>
+
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">Codigo </th>
+                        <th scope="col">Nombre de Producto</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Imagen</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody id='Table1'>
+
+
+                    </tbody>
+                  </table>
+                
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+
+</html>

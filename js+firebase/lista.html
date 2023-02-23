@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS + Firebase</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="./main.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script>
+    <script src="api.js"></script>
+</head>
+
+<body onload="readQ()"> 
+        <nav class="navbar navbar-light  justify-content-between "style="background-color: #29B6AA;">
+            <lu class="navbar-brand">   
+                <a class="navbar-brand" href="index.html">Altas</a>
+                <a class="navbar-brand" href="lista.html">Lista</a>
+            </lu>
+
+         
+
+            <form class="form-inline" action="" method="POST">
+              <input class="form-control mr-sm-2" id="B1" type="search" placeholder="Search" aria-label="Search">
+              <input class="btn btn-outline-success my-2 my-sm-0" type="button" style="border-color: black; color: black;" id="miBoton" onclick="readQ()" value="search">
+            </form>
+          </nav>
+
+          <div class="container p-3 my-3">
+            <div class="row">
+                
+              
+                <div class="col-md-12">
+                    <h3 style="text-align:center">Productos</h3>
+    
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Matrícula</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Carrera</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody id='Table2'>
+    
+    
+                        </tbody>
+                      </table>
+                    
+                </div>
+    
+            </div>
+        </div>
+</body>
+
+
+</html>
