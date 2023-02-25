@@ -9,9 +9,7 @@ const firebaseConfig = {
   measurementId: "G-JM3YLM5PJP"
 };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
 
 function resetFields(){
   document.getElementById("Input1").value='';
@@ -23,7 +21,6 @@ function resetFields(){
 }
 function createR() {
   document.getElementById("Input1").disabled = false;
-  //Guardo los datos capturados usando el id de cada control
   var codigo = document.getElementById("Input1").value;
   var nombre = document.getElementById("Input2").value;
   var categoria= document.getElementById("Input3").value;
@@ -31,9 +28,7 @@ function createR() {
   var imagen = document.getElementById("Input5").value;
 
 
-  //validaciones
   if (codigo.length > 0) {
-      //creo un objeto que guarda los datos
       var producto = {
           codigo, 
           nombre,
@@ -75,10 +70,8 @@ function printRow(producto){
   if(producto!=null){
       var table = document.getElementById("Table1"); 
 
-      //creamos un nuevo elemento en la tabla en la ultima posicion
       var row = table.insertRow(-1);
 
-      //Insertamos cada una de las celdas/columnas del registro
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
@@ -87,7 +80,6 @@ function printRow(producto){
       var cell6 = row.insertCell(5);
       var cell7 = row.insertCell(6);
 
-      //Agregamos la informacion a cada una de las columnas del registro
       cell1.innerHTML = producto.codigo;
       cell2.innerHTML = producto.nombre; 
       cell3.innerHTML = producto.categoria;
@@ -142,19 +134,20 @@ function printRowQ(producto){
 
   var table = document.getElementById("Table2"); 
   
-  //creamos un nuevo elemento en la tabla en la ultima posicion
   var row = table.insertRow(-1);
 
-  //Insertamos cada una de las celdas/columnas del registro
   var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(1);
   var cell3 = row.insertCell(2);
   var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+
   
-  //Agregamos la informacion a cada una de las columnas del registro
   cell1.innerHTML = producto.codigo;
   cell2.innerHTML = producto.nombre; 
   cell3.innerHTML = producto.categoria;
   cell4.innerHTML = producto.descripcion; 
  
 }
+
+/*imagen*/ 
